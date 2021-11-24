@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="alumnos::head"> <title>Direcciones</title></head>
+
+
+
+<body>
+	<!-- Importación de Menu alumnos::menu -->
+	<nav th:replace="alumnos::menu"></nav>
+
+
+	<!-- Contenedor Tabla -->
+	<div class="row shadow p-3 mb-5 mx-5 bg-body rounded">
+		<div class="container text-center">
+
+			<div class="col-sm-12">
+				<h3>Direcciones</h3>
+				<table class="table">
+					<thead class="thead-light">
+						<tr>
+							<th scope="col">Calle</th>
+							<th scope="col">Numero</th>
+							<th scope="col">Ciudad</th>
+							<th scope="col">Tipo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="direccion: ${direcciones}">
+							<td th:text="${direccion.calle}" />
+							<td th:text="${direccion.numero}" />
+							<td th:text="${direccion.ciudad}" />
+							<td th:text="${direccion.tipo}" />
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Importación Footer Bootstrap -->
+	<script th:replace="alumnos::bootstrapfooter"></script>
+</body>
+</html>
